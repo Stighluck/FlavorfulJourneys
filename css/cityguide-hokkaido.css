@@ -1,0 +1,472 @@
+/* #region Fonts */
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: "100";
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+  }
+/* #endregion Fonts */
+
+/* #region Format */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "inter"; 
+}
+/* #endregion Format */
+
+/* #region Navigation */
+.pointer{
+    cursor: pointer;
+}
+.selected{
+    color: #ff6060 !important;
+    cursor: default !important;
+
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    padding: 15px 0 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 3; 
+    position: fixed;
+    /* position: absolute; */
+}
+nav ul {
+    display: flex; 
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+}
+a{
+    
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease-in-out;
+}
+a:hover{    
+    color: #00b8a9;
+}
+.headerlogo img{
+    margin-top: 5px;
+    width: auto; 
+    height: 30px;
+    object-fit: contain; 
+    
+}
+.login{
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 11px 30px;
+    border: none;
+    background-color: #ff6060;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 50%;
+    margin-left: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    
+}
+.login:hover{
+    background-color: #00b8a9;
+    cursor: pointer;
+}
+/* #endregion Navigation */
+
+/* #region LoginForm */
+.btnsignup{
+    border-radius: 20px;
+    border: 3px solid #ff6060;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 8px 30px;
+    font-weight: bold;
+    font-size: 2vh;
+    margin-left: 4.8vh;
+    margin-top: 6%;
+    align-self: flex-start;
+}
+.btnsignup:hover{
+    border-color: #db5c5c;
+    background-color: rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+.btnsignin{
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ff6060;
+    color: #ffffff;
+    padding: 11px 32px;
+    font-weight: bold;
+    font-size: 2vh;
+    margin-top: 4vh;
+    align-self: center;
+}
+.btnsignin:hover{
+    background-color: #db5c5c;
+    cursor: pointer;
+}
+.overlaylogin{
+    display: none;
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    z-index: 4;
+    top: 0; 
+    left: 0; 
+
+}
+.overlaylogin.activated{
+    display: block;
+    position: fixed; 
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+
+}
+
+strong{
+    color: #ff6060;
+}
+.whitetext{
+    color: white;
+}
+body{
+    background-color: #f6f6f6;
+}
+
+.loginform{
+    top: 20%;
+    position: absolute;
+    padding-left: 22vw;
+    padding-right: 22vw;
+}
+
+.loginformgrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "translucent opaque opaque opaque";
+}
+
+.loginlogoctr{
+    margin-left: 3.5vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.loginwelcomectr{
+    margin-left: 5vh;
+    color: #ffffff;
+}
+
+.loginwelcomectr h1{
+    font-size: 5vh;
+}
+
+.loginwelcomectr h2{
+    padding-top: 40%;
+    font-size: 2.6vh;
+}
+
+.loginformlogo{
+    height: auto;
+    width: 90%;
+}
+
+.translucentside{
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    grid-area: translucent;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    height: 60vh;
+    width: 40vh;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.opaqueside{
+    background-color: white;
+    grid-area: opaque;
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+    width: 60vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.translucent-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+.opaque-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  
+    
+}
+.exit{
+    align-self: flex-end;
+    cursor: pointer;
+    color: #ff6060;
+    transition: color 0.4s ease-in-out;
+}
+.exit:hover{
+    color: #00b8a9;
+}
+
+.loginacctr{
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 3vh;
+    
+}
+
+.usernamebox, .passwordbox{
+    margin-top: 6%;
+    margin-right: 5%;
+    font-size: 2.4vh;
+    margin-left: 10%;
+}
+.textbox{
+    border-radius: 5px;
+    padding: 10px;
+    width: 89%;
+    margin-top: 2vh;
+    border-color: #1b1b1b;
+    border-style: solid;
+}
+.textbox:hover{
+    border-color: #ff6060;
+}
+/* #endregion LoginForm*/
+
+/* #region MainContent */
+.supportpage{
+    background-color: #f6f6f6;
+    width: 100%;
+}
+.supportpagewrap{
+    padding-top: 10vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 100vh;
+}
+.faqs{
+
+}
+.faqs h1{
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+.questionbox{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: "question arrow"
+                         "answer answer";
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px 15px;
+    min-width: 200px;
+    align-items: center;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.question{
+    padding-left: 10px;
+    padding-top: 5px;
+    grid-area: question;
+    font-weight: bold;
+    user-select: none;
+}
+.arrow{
+    padding-top: 5px;
+    grid-area: arrow;
+    color: #1b1b1b;
+    transition: transform 1s ease-out;
+}
+.arrow:hover{
+    color: #ff6060;
+    cursor: pointer;  
+}
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    grid-area: answer;
+    border-bottom: 3px solid transparent; 
+    user-select: none;
+    padding-left: 20px;
+    padding-right: 50px;
+    
+}
+.answer.expanded {
+    max-height: 300px; 
+    transition: max-height 0.3s ease;
+   
+    
+   
+   
+}
+.arrow.expanded{
+    color: #ff6060;
+}
+/* #endregion MainContent */
+
+/* #region ContactForm */
+.btnsignin{
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ff6060;
+    color: #ffffff;
+    padding: 11px 32px;
+    font-weight: bold;
+    font-size: 2vh;
+    margin-top: 4vh;
+    
+    align-self: center;
+}
+.btnsignin:hover{
+    background-color: #db5c5c;
+    cursor: pointer;
+}
+
+
+.overlaycontact {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 4;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.overlaycontact.activated {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+strong{
+    color: #ff6060;
+}
+.whitetext{
+    color: white;
+}
+body{
+    background-color: #f6f6f6;
+}
+
+.contactform{
+    top: 20%;
+    position: absolute;
+    padding-left: 22vw;
+    padding-right: 22vw;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;  
+}
+.contactform.activated{
+    transform: translateY(-50px);
+    opacity: 1;
+}
+
+.contactformgrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "opaque"
+                         "translucent";
+}
+
+.contactlogoctr{
+    justify-content: center;
+    display: flex;
+    padding-top: 1.5vh;
+}
+
+.contactwelcomectr h1{
+    font-size: 5vh;
+}
+
+.contactwelcomectr h2{
+    padding-top: 40%;
+    font-size: 2.6vh;
+}
+
+.contactformlogo{
+    height: auto;
+    width: 30%;
+}
+
+.contacttranslucentside{
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    grid-area: translucent;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    width: 50vw;
+    height: 10vh;
+    /* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.contactopaqueside{
+    background-color: white;
+    grid-area: opaque;
+    padding: 20px;
+    border-radius: 20px 20px 0 0 ;
+    width: 50vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.contact-opaque-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.contactacctr{
+    text-align: center;
+    font-size: 3vh;
+}
+
+.usernamebox, .passwordbox{
+    margin-top: 6%;
+    margin-right: 5%;
+    font-size: 2.4vh;
+    margin-left: 10%;
+}
+.textbox{
+    border-radius: 5px;
+    padding: 10px;
+    width: 89%;
+    margin-top: 2vh;
+    border-color: #1b1b1b;
+    border-style: solid;
+}
+.textbox:hover{
+    border-color: #ff6060;
+}
+/* #endregion LoginForm*/
+

@@ -1,128 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flavorful Journeys</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <div class="head-left">
-                <img src="img/logo.png" alt="logo">
-                <button>CREATE /LOGIN</button>
-            </div>
-
-            <div class="head-right">
-                <p><a href="#section1">HOME</a></p>
-                <p><a href="#section2">ABOUT</a></p>
-                <p><a href="#section3">CONTACT</a></p>
-            </div>
-        </header>
-
-        <section id="section1"class="hero-section autoBlur">
-            <div class="hero-vid">
-                <video loop autoplay muted plays-inline class="hero-video">
-                    <source src="videos/Untitled2.mp4" type="video/mp4">
-                </video>
-
-                <div class="hero-info">
-                    <h1>FLAVOURFUL JOURNEYS</h1>
-                    <p>Lorem ipsum dolor sit amet. Qui quasi quod qui adipisci temporibus</p>
-                    <button>Install</button>
+    <header id="hero">
+        <img src="assets/logotext.png" class="hero-logotext" alt="">
+        <img src="assets/Hero.png" class="hero-bg" alt="Game Scene">
+        <button class="play-btn">PLAY NOW</button>
+        <nav>
+            <div class="nav-container">
+                <div class="nav-left">
+                    <img src="assets/logo.png" class="headerlogo" alt="Logo">
                 </div>
+                <ul class="nav-right">
+                    <li><a class="active">Home</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#about">About</a></li>
+
+                </ul>
+                <button class="login-btn">Login</button>
+            </div>
+
+        </nav>
+
+    </header>
+    <section class="scrolltext">
+        <div>
+            <h2>DON'T LET THE FOOD BURN</h2>
+            <h2>WORK TOGETHER OR SERVE DISASTER!</h2>
+            <h2>ONLY THE FASTEST WINS</h2>
+
+            <!-- Duplicate for seamless loop -->
+            <h2>DON'T LET THE FOOD BURN</h2>
+            <h2>WORK TOGETHER OR SERVE DISASTER!</h2>
+            <h2>ONLY THE FASTEST WINS</h2>
+        </div>
+    </section>
+    <section class="intro-section">
+        <div class="intro-img">
+            <img src="assets/Cauldron.gif" alt="Cooking Cauldron">
+        </div>
+        <div class="intro-text">
+            <h1>CHOP, COOK, SURVIVE TOGETHER</h1>
+            <p>
+                Team up in this frantic co-op adventure where timing, teamwork, and a pinch of chaos are the secret
+                ingredients! Gather strange ingredients, brave wild environments, and dish out meals before time runs
+                out. Teamwork is key… or the kitchen goes up in flames. Ready to serve?
+            </p>
+            <button class="play-btn2">PLAY NOW</button>
+        </div>
+    </section>
+    <img class="border" src="assets/ingredients.png" alt="">
+    <section class="features-section">
+        <div class="feature-block">
+            <div class="feature-text">
+                <div class="ribbon">CO-OP! </div>
+                <p>No chef cooks alone—team up and beat the heat!</p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/render.png" alt="Co-op Gameplay">
+            </div>
+        </div>
+
+        <div class="feature-block reverse">
+            <div class="feature-text">
+                <div class="ribbon">GATHER!</div>
+                <p>Raid goblin huts, harvest crops, slay pigs—ingredients won't find themselves!</p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/render.png" alt="Gathering Ingredients">
+            </div>
+        </div>
+
+        <div class="feature-block">
+            <div class="feature-text">
+                <div class="ribbon">COOK FAST!</div>
+                <p>Toss it in the pan, don't let it burn—timing is everything!</p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/render.png" alt="Co-op Gameplay">
+            </div>
+        </div>
+
+        <div class="feature-block reverse">
+            <div class="feature-text">
+                <div class="ribbon">SKINS!</div>
+                <p>From grandma aprons to cyber chefs—cook in style!</p>
+            </div>
+            <div class="feature-image">
+                <img src="assets/render.png" alt="Co-op Gameplay">
+            </div>
+        </div>
+    </section>
+    <img class="border" src="assets/Orange.png" alt="">
+    <section class="support-section">
+        <h2>SUPPORT</h2>
+        <p>
+            Need Help? We're here to make your cooking adventure smooth and fun! If you’ve got questions, we’ve got
+            answers. From game mechanics to troubleshooting, everything you need is just a click away.
+        </p>
+        <button class="play-btn2">Help? Click Me!</button>
+    </section>
+    
+
+    <section class="cta-wrapper">
+        <img class="border" src="assets/Footer2.png" alt="">
+        <div class="cta-section">
+            <img class="cta-mascot" src="assets/Mascot.png" alt="">
+            <div>
+                <h1>JOIN THE COMMUNITY!</h1>
+                <div class="social-icons">
+                    <svg id="discord" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        width="24" height="24">
+                        <path
+                            d="M14.983 3l.123 .006c2.014 .214 3.527 .672 4.966 1.673a1 1 0 0 1 .371 .488c1.876 5.315 2.373 9.987 1.451 12.28c-1.003 2.005 -2.606 3.553 -4.394 3.553c-.732 0 -1.693 -.968 -2.328 -2.045a21.512 21.512 0 0 0 2.103 -.493a1 1 0 1 0 -.55 -1.924c-3.32 .95 -6.13 .95 -9.45 0a1 1 0 0 0 -.55 1.924c.717 .204 1.416 .37 2.103 .494c-.635 1.075 -1.596 2.044 -2.328 2.044c-1.788 0 -3.391 -1.548 -4.428 -3.629c-.888 -2.217 -.39 -6.89 1.485 -12.204a1 1 0 0 1 .371 -.488c1.439 -1.001 2.952 -1.459 4.966 -1.673a1 1 0 0 1 .935 .435l.063 .107l.651 1.285l.137 -.016a12.97 12.97 0 0 1 2.643 0l.134 .016l.65 -1.284a1 1 0 0 1 .754 -.54l.122 -.009zm-5.983 7a2 2 0 0 0 -1.977 1.697l-.018 .154l-.005 .149l.005 .15a2 2 0 1 0 1.995 -2.15zm6 0a2 2 0 0 0 -1.977 1.697l-.018 .154l-.005 .149l.005 .15a2 2 0 1 0 1.995 -2.15z">
+                        </path>
+                    </svg>
+                    <svg id="youtube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        width="24" height="24">
+                        <path
+                            d="M18 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-12a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-9 6v6a1 1 0 0 0 1.514 .857l5 -3a1 1 0 0 0 0 -1.714l-5 -3a1 1 0 0 0 -1.514 .857z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section class="footer-section">
+            <div>
+                <ul>
+                    <li>
+                        <h3>Navigation</h3>
+                    </li>
+                    <li><a href="" class="active">Home</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <img class="footer-logo" src="assets/fillogo.png" alt="">
             </div>
         </section>
+        <div class="copyright">
+            <p>© 2025 Copyright Filbyte. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <section id="section2"class="about-section">
-            <p>welcome!!</p>
-
-            <div class="autoBlur">
-                <h1>ADVENTURE THE WORLD OF COOKING</h1>
-            </div>
-
-            <div class="image-box ">
-                <img src="img/about.png" alt="about-image">
-            </div>
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</h4>
-            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-        </section>
-
-        <!--section class="info section">
-            <h3>lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-            <div class="info-cards">
-                <div class="card">
-                    <h1>skin 1</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    
-                    <video src="videos/feature-1.mp4" autoplay loop muted plays-inline></video>
-                    <button>300</button>
-                </div>
-    
-                <div class="card">
-                    <h1>skin 2</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    
-                    <video src="videos/feature-2.mp4" autoplay loop muted plays-inline></video>
-                    <button>300</button>
-                </div>
-    
-                <div class="card">
-                    <h1>skin 3</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    
-                    <video src="videos/feature-3.mp4" autoplay loop muted plays-inline></video>
-                    <button>300</button>
-                </div>
-    
-                <div class="card">
-                    <h1>skin 4</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    
-                    <video src="videos/feature-4.mp4" autoplay loop muted plays-inline></video>
-                    <button>300</button>
-                </div>
-    
-                <div class="card">
-                    <video src="videos/feature-5.mp4" autoplay loop muted plays-inline></video>
-                </div>
-    
-                <div class="card">
-                    <h1>MORE COMING SOON</h1>
-                </div>
-            </div>
-        </!--section-->
-
-        <section id="section3"class="contact-section">
-            <p>join us</p>
-
-            <div class="autoBlur">
-                <h1>Let's us learn to cook together</h1>
-            </div>
-
-            <button>CONTACT US</button>
-            <img class="img1" src="img/swordman.webp" alt="contact-img">
-            <img class="img2" src="img/contact-1.webp" alt="contact-img">
-            <img class="img3" src="img/contact-2.webp" alt="contact-img">
-        </section>
-
-        <section class="footer">
-            <p>Copyright &copy; 2022</p>
-            <ul>
-                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
-                <li><a href="#"><i class='bx bxl-facebook-square' ></i></a></li>
-                <li><a href="#"><i class='bx bxl-instagram' ></i></a></li>
-                <li><a href="#"><i class='bx bxl-github' ></i></a></li>
-            </ul>
-            <p>Privac Policy</p>
-
-        </section>
-    </div>
-
-    <script> src = "script.js"</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener('scroll', function () {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
