@@ -28,6 +28,9 @@
     --color-font: #1B1B1B;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* fonts */
 * {
@@ -100,64 +103,6 @@ nav ul {
 
 }
 
-.headerlogo {
-    background-color: transparent;
-    height: 50px;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    width: auto;
-    /* Avoid stretching */
-}
-
-#hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.hero-logotext {
-    position: absolute;
-    max-width: 400px;
-    height: auto;
-    object-fit: contain;
-    z-index: 1;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.play-btn {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'PixterDisplay';
-    font-weight: bold;
-    color: var(--color-font);
-    background-color: var(--color-primary);
-    border: none;
-    ;
-    border-radius: 50px;
-    padding: 5px 35px 10px 35px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
-}
-
-.play-btn:hover {
-    background-color: var(--color-white);
-    color: var(--color-font);
-}
-
 .nav-left,
 .nav-right {
     display: flex;
@@ -210,6 +155,65 @@ nav ul a:hover {
     color: var(--color-primary);
 }
 
+
+.headerlogo {
+    background-color: transparent;
+    height: 50px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    width: auto;
+    /* Avoid stretching */
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-logotext {
+    position: absolute;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play-btn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'PixterDisplay';
+    font-weight: bold;
+    color: var(--color-font);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 35px 10px 35px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+}
+
+.play-btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-font);
+}
+
+
 .scrolltext {
     background-color: var(--color-primary);
     height: 140px;
@@ -241,7 +245,7 @@ nav ul a:hover {
     }
 
     100% {
-        transform: translateX(-30%);
+        transform: translateX(-53.2%);
     }
 }
 
@@ -274,7 +278,7 @@ nav ul a:hover {
 }
 
 .intro-text p {
-    font-size: 20px;
+    font-size: 23px;
     font-family: 'PixterDisplay';
     color: var(--color-font);
     line-height: 1.6;
@@ -314,7 +318,7 @@ nav ul a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
@@ -323,32 +327,41 @@ nav ul a:hover {
 }
 
 .feature-text {
-    max-width: 300px;
+    max-width: 500px;
     color: white;
     text-align: left;
+    margin-bottom: 40px;
+    color: var(--color-font);
 }
 
 .ribbon {
-    background-color: #8b1f1f;
-    color: white;
-    padding: 8px 20px;
-    font-size: 18px;
+    font-size: 40px;
     display: inline-block;
     font-weight: bold;
-    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
     margin-bottom: 12px;
 }
 
 .feature-text p {
-    font-size: 20px;
+    font-size: 23px;
     line-height: 1.5;
 }
 
-.feature-image img {
-    width: 620px;
+
+
+.feature-image {
+    position: relative;
+    overflow: hidden;
+    width: 700px;
     border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    image-rendering: pixelated;
+    border: 10px solid white;
+}
+
+.feature-image img {
+    position: relative;
+    width: 850px;
+    object-fit: cover;
+    transform: translateX(-100px);
+    /* Offsets the image by -20px on the x-axis */
 }
 
 .border {
@@ -373,17 +386,23 @@ nav ul a:hover {
 }
 
 .support-section h2 {
+    font-size: 90px;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    font-family: 'PixterDisplay';
     color: var(--color-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .support-section p {
-    padding: 0px 300px;
+    padding: 0px 360px;
     color: white;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 1.5;
     margin-bottom: 30px;
     font-family: 'PixterDisplay';
     font-weight: normal;
+    text-align: center;
     line-height: 50px;
 }
 

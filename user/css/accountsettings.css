@@ -1,0 +1,424 @@
+/* fonts */
+@font-face {
+    font-family: 'PixterDisplay';
+    src: url('/assets/fonts/PixterDisplay.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PixterDisplay';
+    src: url('/assets/fonts/PixterDisplayBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EarlyGameBoy';
+    src: url('/assets/fonts/EarlyGameBoy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-primary: #77dd76;
+    --color-secondary: #fa9130;
+    --color-secondary-dark: #ad6421;
+    --color-white: #E5E5E5;
+    --color-font: #1B1B1B;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    /* Prevent scroll on body */
+}
+
+
+.scroll-container {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 100px 20px 40px 20px;
+}
+
+/* fonts */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'PixterDisplay';
+}
+
+
+/* header */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 998;
+    transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: #1b1b1b;
+}
+
+nav::after {
+
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(27, 27, 27, 1);
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.nav-container {
+    max-width: 1800px;
+    margin: 0 auto;
+
+    padding: 10px 25px 10px 25px;
+
+    /* <--- This adds space left and right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    background-color: transparent;
+
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+nav ul li {
+    background-color: transparent;
+
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: 'PixterDisplay';
+    font-size: 20px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul a:hover {
+
+    color: var(--color-primary);
+
+}
+
+.login-btn {
+    border-radius: 20px;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    background-color: transparent;
+    outline: none;
+    padding: 5px 20px 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-font);
+    border: 2px solid var(--color-primary);
+}
+
+.active {
+    color: var(--color-primary);
+}
+
+
+
+
+.headerlogo {
+    background-color: transparent;
+    height: 50px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    width: auto;
+    /* Avoid stretching */
+}
+
+
+.darkoverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #8d4e1b;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.herobanner {
+    position: fixed;
+    /* Make background stay put */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("/assets/Loading Screen2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-logotext {
+    position: absolute;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #1b1b1b;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--color-white);
+    font-family: 'PixterDisplay';
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.modal-btn {
+    font-family: 'PixterDisplay';
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-btn.confirm {
+    background-color: var(--color-primary);
+    color: var(--color-font);
+}
+
+.modal-btn.cancel {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+}
+
+.modal-btn:hover {
+    transform: scale(1.05);
+}
+
+.dashboard-container {
+    margin: 150px 100px 50px 100px;
+    height: 55vh;
+    position: relative;
+
+    z-index: 5;
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 12px;
+    /* Optional if inside .scroll-container */
+    color: var(--color-font);
+}
+
+#welcomeHeader {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.dashboard-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    >* {
+        flex: 1;
+    }
+}
+
+.accountsettings-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card-border {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    min-height: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-border h2 {
+    font-size: 35px;
+
+}
+
+.card-border p {
+    font-size: 35px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.orange {
+    background-color: var(--color-secondary);
+}
+
+.green {
+    background-color: var(--color-primary);
+}
+
+.purple {
+    background-color: #70a2e4;
+}
+
+.red {
+    background-color: rgb(216, 78, 78)
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+
+}
+
+.textbox {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid var(--color-font);
+    font-size: 18px;
+    font-family: 'PixterDisplay';
+    outline: none;
+    background-color: white;
+    color: var(--color-font);
+}
+
+.textbox:focus {
+    border-color: var(--color-secondary);
+}
+
+.action-button {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-family: 'PixterDisplay';
+    background-color: var(--color-primary);
+    color: var(--color-font);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.setting-buttons {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.setting-toggle {
+    padding: 10px 20px;
+    font-family: 'PixterDisplay';
+    font-size: 18px;
+    background-color: var(--color-primary);
+    color: var(--color-font);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.setting-toggle:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.hidden {
+    display: none;
+}

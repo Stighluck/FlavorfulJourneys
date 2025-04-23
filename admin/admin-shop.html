@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>User Management - Bethany Bible Baptist Academy</title>
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/adminshop.css" />
+</head>
+
+<body>
+    <div class="herobanner"></div>
+    <div class="darkoverlay"></div>
+    <nav>
+        <div class="nav-container">
+            <div>
+                <div class="nav-left">
+                    <img src="../assets/logo.png" class="headerlogo" alt="Logo" />
+                </div>
+                <ul class="nav-right">
+                    <li><a href="admin-dashboard.html">Dashboard</a></li>
+                    <li><a href="admin-users.html">User Management</a></li>
+                    <li><a href="admin-transactions.html">Transactions</a></li>
+                    <li><a class="active">Shop Items</a></li>
+                    <!-- <li><a href="admin-analytics.html">Analytics</a></li> -->
+                </ul>
+            </div>
+            <button class="login-btn" id="logout">Logout</button>
+        </div>
+    </nav>
+
+    <section>
+        <div class="scroll-container">
+            <section class="dashboard-container">
+
+                <div class="user-actions">
+                    <h1>Transaction Viewer</h1>
+                    <div class="user-actions-buttons">
+                        <div class="filter-container">
+                            <button class="filter-btn">
+                                Filter by: <span class="filter-selected">All</span> <span class="filter-caret">▼</span>
+                            </button>
+                            <ul class="filter-options" style="display: none;">
+                                <li data-filter="all">All</li>
+                                <li data-filter="highest">Highest</li>
+                                <li data-filter="lowest">Lowest</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <table id="skinTable">
+                    <thead>
+                        <tr>
+                            <th>Skin Name</th>
+                            <th>Price</th>
+                            <th>Tier</th>
+                            <th>Currency</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic users will be injected here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div id="logoutModal" class="modal hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to logout?</p>
+                <div class="modal-buttons">
+                    <button id="confirmLogout" class="modal-btn confirm">Yes</button>
+                    <button id="cancelLogout" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="skinDetailModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Edit Skin Details</h2>
+                <div class="modal-skin-wrapper">
+                    <!-- Left Side -->
+                    <div class="modal-skin-left">
+                        <img id="skinImage" src="" alt="Skin Image" class="modal-skin-image">
+                        <p><strong>Name:</strong> <span id="skinName"></span></p>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="modal-skin-right">
+                        <div class="modal-input-row">
+                            <div class="modal-input-group">
+                                <label for="editSkinPrice"><strong>Price:</strong></label>
+                                <input type="number" id="editSkinPrice" class="modal-input" />
+                            </div>
+                            <div class="modal-input-group">
+                                <label for="editSkinTier"><strong>Tier:</strong></label>
+                                <input type="text" id="editSkinTier" class="modal-input" />
+                            </div>
+                            <div class="modal-input-group">
+                                <label for="editSkinCurrency"><strong>Currency:</strong></label>
+                                <input type="text" id="editSkinCurrency" class="modal-input" />
+                            </div>
+                        </div>
+
+                        <div class="modal-input-group">
+                            <label for="editSkinImageUrl"><strong>Image URL:</strong></label>
+                            <textarea id="editSkinImageUrl" class="modal-input modal-input-long" rows="3"></textarea>
+                        </div>
+
+                        <div class="modal-buttons">
+                            <button id="saveChangesBtn" class="modal-btn save">Save Changes</button>
+                            <button id="closeModalBtn" class="modal-btn cancel">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="js/adminshop.js"></script>
+</body>
+
+</html>

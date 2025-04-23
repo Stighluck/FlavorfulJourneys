@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>User Management - Bethany Bible Baptist Academy</title>
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/adminusers.css" />
+</head>
+
+<body>
+    <div class="herobanner"></div>
+    <div class="darkoverlay"></div>
+    <nav>
+        <div class="nav-container">
+            <div>
+                <div class="nav-left">
+                    <img src="../assets/logo.png" class="headerlogo" alt="Logo" />
+                </div>
+                <ul class="nav-right">
+                    <li><a href="admin-dashboard.html">Dashboard</a></li>
+                    <li><a class="active" href="admin-users.html">User Management</a></li>
+                    <li><a href="admin-transactions.html">Transactions</a></li>
+                    <li><a href="admin-shop.html">Shop Items</a></li>
+                    <!-- <li><a href="admin-analytics.html">Analytics</a></li> -->
+                </ul>
+            </div>
+            <button class="login-btn" id="logout">Logout</button>
+        </div>
+    </nav>
+
+    <section>
+        <div class="scroll-container">
+            <section class="dashboard-container">
+
+                <div class="user-actions">
+                    <h1>User Management</h1>
+                    <div class="user-actions-buttons">
+
+                        <div class="filter-container">
+                            <button class="filter-btn">
+                                Filter by: <span class="filter-selected">All</span> <span class="filter-caret">▼</span>
+                            </button>
+                            <ul class="filter-options" style="display: none;">
+                                <li data-filter="all">All</li>
+                                <li data-filter="enabled">Enabled</li>
+                                <li data-filter="disabled">Disabled</li>
+                            </ul>
+                        </div>
+                        <button id="addUserBtn">Add User</button>
+                    </div>
+                </div>
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>UserId</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic users will be injected here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div id="logoutModal" class="modal hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to logout?</p>
+                <div class="modal-buttons">
+                    <button id="confirmLogout" class="modal-btn confirm">Yes</button>
+                    <button id="cancelLogout" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="resetPasswordModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Reset User Password</h3>
+                <p>The password will be reset to the default password.</p>
+
+                <div class="modal-buttons">
+                    <button type="button" class="modal-btn confirm" id="confirmResetPassword">Reset Password</button>
+                    <button type="button" class="modal-btn cancel" id="closeResetPasswordModal">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="disableUserModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Disable This User</h3>
+                <p>This user would not be able to login</p>
+
+                <div class="modal-buttons">
+                    <button type="button" class="modal-btn confirm" id="confirmDisable">Disable User</button>
+                    <button type="button" class="modal-btn cancel" id="closeDisable">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="enableUserModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Enable This User</h3>
+                <p>This user would now be able to login</p>
+
+                <div class="modal-buttons">
+                    <button type="button" class="modal-btn confirm" id="confirmEnable">Enable User</button>
+                    <button type="button" class="modal-btn cancel" id="closeEnable">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="reauthenticateModal" class="hidden">
+            <div class="modal-content">
+                <label for="adminPassword">Enter your password to continue:</label>
+                <input type="password" id="adminPassword" />
+                <button id="reauthenticateBtn">Reauthenticate</button>
+                <button id="cancelReauthenticateBtn">Cancel</button>
+            </div>
+        </div>
+        <div id="addUserModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Add New User</h3>
+                <input type="text" id="newUsername" placeholder="Username" />
+                <input type="email" id="newUserEmail" placeholder="Email" />
+                <div class="modal-buttons">
+                    <button id="confirmAddUser" class="modal-btn confirm">Add User</button>
+                    <button id="cancelAddUser" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="js/adminusers.js"></script>
+</body>
+
+</html>

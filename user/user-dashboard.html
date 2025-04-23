@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Bethany Bible Baptist Academy</title>
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/userdashboard.css">
+
+    <script type="module" src="js/login-firebase.js"></script>
+
+
+</head>
+
+<body>
+    <div class="herobanner"></div>
+    <div class="darkoverlay"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <img src="../assets/logo.png" class="headerlogo" alt="Logo">
+            </div>
+            <ul class="nav-right">
+                <li><a class="active">Dashboard </a></li>
+                <li><a href="user-topup-history.html">Top Up History</a></li>
+                <li><a href="user-gem-spending-history.html">Gem Spending History</a></li>
+                <li><a href="user-account-settings.html">Account Settings</a></li>
+
+            </ul>
+            <button class="login-btn" id="logout">Logout</button>
+        </div>
+    </nav>
+    <!-- #endregion loginform -->
+    <section>
+        <div class="scroll-container">
+            <section class="dashboard-container">
+                <h1 id="welcomeHeader">Welcome Back, <span id="username">Loading...</span></h1>
+                <div class="dashboard-items">
+                    <div class="card-border orange">
+                        <div>
+                            <h2>COINS</h2>
+                            <p>
+                                <span id="coins">Loading...</span>
+                            </p>
+                        </div>
+                        <img class="icon" src="../assets/coins.png" alt="">
+                    </div>
+                    <div class="card-border purple">
+                        <div>
+                            <h2>GEMS</h2>
+                            <p>
+                                <span id="gems">Loading...</span>
+                            </p>
+                        </div>
+                        <img class="icon" src="../assets/gems.png" alt="">
+                    </div>
+
+                    <div class="card-border green">
+                        <div>
+                            <h2>TOTAL TOPUP</h2>
+                            <p>
+                                <span id="total-amount">Loading...</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-border red">
+                        <div>
+                            <h2>LAST PURCHASED</h2>
+                            <p>
+                                <span id="lastitem">Loading...</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="logoutModal" class="modal hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to logout?</p>
+                <div class="modal-buttons">
+                    <button id="confirmLogout" class="modal-btn confirm">Yes</button>
+                    <button id="cancelLogout" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="js/userdashboard.js"></script>
+</body>
+
+</html>

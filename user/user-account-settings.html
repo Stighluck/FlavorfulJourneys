@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Bethany Bible Baptist Academy</title>
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/accountsettings.css">
+
+    <script type="module" src="js/login-firebase.js"></script>
+
+
+</head>
+
+<body>
+    <div class="herobanner"></div>
+    <div class="darkoverlay"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <img src="../assets/logo.png" class="headerlogo" alt="Logo">
+            </div>
+            <ul class="nav-right">
+                <li><a href="user-dashboard.html">Dashboard </a></li>
+                <li><a href="user-topup-history.html">Top Up History</a></li>
+                <li><a href="user-gem-spending-history.html">Gem Spending History</a></li>
+                <li><a class="active">Account Settings</a></li>
+
+            </ul>
+            <button class="login-btn" id="logout">Logout</button>
+        </div>
+    </nav>
+    <!-- #endregion loginform -->
+    <section>
+        <div class="scroll-container">
+            <section class="dashboard-container">
+                <div class="accountsettings-menu">
+                    <h1 id="welcomeHeader">Account Settings</h1>
+                    <div class="setting-buttons">
+                        <button class="setting-toggle" id="toggleEmail">Change Email</button>
+                        <button class="setting-toggle" id="togglePassword">Change Password</button>
+                    </div>
+                </div>
+
+                <div id="emailSection" class="form-section">
+                    <h2>Current Email Address: <span id="email">Loading...</span></h2>
+                    <h2>Change Email</h2>
+                    <div class="form-column">
+                        <input type="email" placeholder="New Email Address" class="textbox">
+                        <button class="action-button">Save Email</button>
+                    </div>
+                </div>
+
+                <div id="passwordSection" class="form-section hidden">
+                    <h2>Change Password</h2>
+                    <div class="form-column">
+                        <input type="password" placeholder="Current Password" class="textbox">
+                        <input type="password" placeholder="New Password" class="textbox">
+                        <input type="password" placeholder="Retype New Password" class="textbox">
+                        <button class="action-button" id="updatePasswordBtn">Update Password</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="logoutModal" class="modal hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to logout?</p>
+                <div class="modal-buttons">
+                    <button id="confirmLogout" class="modal-btn confirm">Yes</button>
+                    <button id="cancelLogout" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="passwordModal" class="modal hidden">
+            <div class="modal-content">
+                <p>Enter your current password to confirm email change:</p>
+                <input type="password" id="currentPasswordInput" class="textbox" placeholder="Current Password">
+                <div class="modal-buttons">
+                    <button id="confirmPasswordBtn" class="modal-btn confirm">Confirm</button>
+                    <button id="cancelPasswordBtn" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="js/accountsettings.js"></script>
+</body>
+
+</html>

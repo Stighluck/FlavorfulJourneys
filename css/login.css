@@ -1,0 +1,1058 @@
+/* fonts */
+@font-face {
+    font-family: 'PixterDisplay';
+    src: url('/assets/fonts/PixterDisplay.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PixterDisplay';
+    src: url('/assets/fonts/PixterDisplayBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EarlyGameBoy';
+    src: url('/assets/fonts/EarlyGameBoy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* #endregion Fonts */
+
+/* #region Format */
+
+:root {
+    --color-primary: #77dd76;
+    --color-secondary: #fa9130;
+    --color-secondary-dark: #ad6421;
+    --color-white: #E5E5E5;
+    --color-font: #1B1B1B;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "PixterDisplay";
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* #endregion Format */
+
+/* #region LoginForm */
+.overlaylogin {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 4;
+    top: 0;
+    left: 0;
+}
+
+.loginform {
+    top: 20%;
+    position: absolute;
+    padding-left: 22vw;
+    padding-right: 22vw;
+}
+
+.loginformgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "translucent opaque";
+}
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 20px 0 0 20px;
+    height: 60vh;
+    width: 60vh;
+
+}
+
+.textboxes {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btnsignin {
+    border-radius: 15px;
+    border-style: none;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 5px 32px 11px 32px;
+    font-weight: bold;
+    font-size: 2vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    width: 100%;
+    align-self: center;
+    transition: all 0.3s ease;
+}
+
+.btnsignin:hover {
+    background-color: var(--color-white);
+    color: var(--black-font-color);
+    cursor: pointer;
+}
+
+.rightside {
+    background-color: var(--color-secondary);
+    grid-area: opaque;
+    border-radius: 0 20px 20px 0;
+    width: 50vh;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.opaque-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.loginlogo {
+    width: 250px;
+    height: 250px;
+}
+
+.loginwelcomectr {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    color: #ffffff;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 20px;
+}
+
+.loginacctr {
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 1.6rem;
+}
+
+.loginacctr h2 {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+
+.textbox {
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    border-color: #9e9e9e;
+    border-style: solid;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.textbox:hover {
+    border-color: var(--color-primary);
+}
+
+.usernamebox {
+    margin-bottom: 20px;
+}
+
+/* #endregion LoginForm*/
+
+/* #region HeroSection */
+.bannersection {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
+}
+
+.bannersection h1 {
+    font-size: 45px;
+    color: var(--primary-color);
+}
+
+.bannersection h2 {
+    font-size: 35px;
+    color: var(--black-font-color);
+}
+
+.bannertext {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+
+.bannersection img {
+    width: 350px;
+    height: 100%;
+    object-fit: contain;
+}
+
+.errormessage {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+    min-height: 50px;
+}
+
+
+
+.darkoverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #8d4e1b;
+    opacity: 0.3;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.herobanner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0.8;
+
+
+}
+
+.herobanner img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+
+}
+
+
+/* #endregion HeroSection */
+
+
+
+@media only screen and (max-width: 320px) {}
+
+
+
+
+@media only screen and (max-width: 1230px) {
+
+    /* #region Navigation */
+    nav {
+        padding: 10px 0 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li:hover ul.dropdown {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3s ease;
+        height: auto;
+        padding: 20px;
+    }
+
+    nav button {
+        border-radius: 25px;
+        padding: 11px 25px;
+        font-size: 16px;
+    }
+
+    .headerlogo {
+        width: auto;
+        height: 35px;
+        object-fit: contain;
+    }
+
+    /* #endregion Navigation */
+
+    /* #region Herosection */
+    .mainbannerheader h1 {
+        text-align: center;
+        font-size: 7rem;
+    }
+
+    .mainbannerheader h2 {
+        text-align: center;
+        font-size: 4.5rem;
+    }
+
+    .logotext {
+        max-width: 280px;
+        height: auto;
+    }
+
+    .btn_contactus {
+        padding: 10px 23px;
+        font-size: 17px;
+    }
+
+    .btn_portfolio {
+        padding: 10px 23px;
+        font-size: 17px;
+    }
+
+    /* #endregion Herosection */
+
+    /* #region Introsection */
+    .introsection {
+        margin-left: 8vw;
+    }
+
+    .introimg {
+        width: 500px;
+    }
+
+    .introsection div div h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .introsection div div p {
+        font-size: 1.1em;
+        line-height: 25px;
+        margin-bottom: 60px;
+    }
+
+    .introdetails {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        gap: 1vw;
+        max-width: 100%;
+    }
+
+    .introdetails div h3 {
+        color: #2E53A5;
+        font-size: 1.7rem;
+    }
+
+    .introdetails div h4 {
+        margin-top: 9px;
+        font-size: 0.9rem;
+    }
+
+    .rating {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .rating svg {
+        color: #2E53A5;
+        height: auto;
+        width: 30px;
+    }
+
+    .introsection button {
+        padding: 10px 23px;
+        font-size: 15pxt;
+    }
+
+    .ratingborder {
+        padding-left: 30px;
+        padding-right: 30px;
+        border-left: 2px solid #2E53A5;
+        border-right: 2px solid #2E53A5;
+    }
+
+    .ratingb {
+        border-left: 2px solid #2E53A5;
+    }
+
+    /* #endregion Introsection */
+
+
+
+    /* #region footer */
+    footer {
+        margin-top: 50px;
+        padding-top: 50px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        font-size: 0.95rem;
+    }
+
+    .footercopyright {
+        font-size: 1rem;
+    }
+
+    .footerlinks {
+        height: 480px;
+        padding: 20px 80px;
+    }
+
+    .footerlinks .contactul {
+        margin-left: 90px;
+    }
+
+    .footerlinks img {
+        width: 170px;
+    }
+
+    .footerlinks ul h3 {
+        font-size: 1.3rem;
+    }
+
+    .footerlinks ul li {
+        list-style: none;
+        margin: 15px 0;
+        margin-left: 10px;
+    }
+
+    .footersvg {
+        padding: 20px 40px;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
+
+    .footersvg div {
+        scale: 0.9;
+    }
+
+    /* #endregion footer */
+
+}
+
+@media only screen and (max-width: 1030px) {
+
+    /* #region Navigation */
+    nav {
+        padding: 9px 0 9px;
+    }
+
+    nav ul {
+        gap: 13px;
+    }
+
+    nav ul li {
+        font: 0.6em;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    nav button {
+        font-size: 14px;
+        padding: 9px 20px;
+    }
+
+    .headerlogo {
+        height: 30px;
+    }
+
+    /* #endregion Navigation */
+
+    /* #region Herosection */
+    .mainbannerheader {
+        line-height: 40px;
+    }
+
+    .mainbannerheader h1 {
+        text-align: center;
+        font-size: 6rem;
+    }
+
+    .mainbannerheader h2 {
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    .logotext {
+        max-width: 250px;
+        height: auto;
+    }
+
+    .btn_contactus {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .btn_portfolio {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    /* #endregion Herosection */
+
+
+    /* #region Introsection */
+    .introsection {
+        margin-left: 6vw;
+        margin-right: 7vw;
+    }
+
+    .introimg {
+        width: 400px;
+    }
+
+    .introsection div div h2 {
+        font-size: 1.9em;
+        margin-bottom: 30px;
+    }
+
+    .introsection div div p {
+        font-size: 0.96em;
+        line-height: 20px;
+        margin-bottom: 60px;
+    }
+
+    .introdetails div h3 {
+        color: #2E53A5;
+        font-size: 1.4rem;
+    }
+
+    .introdetails div h4 {
+        margin-top: 9px;
+        font-size: 0.8rem;
+    }
+
+    .rating svg {
+        width: 20px;
+    }
+
+    .introsection button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    /* #endregion Introsection */
+
+    /* #region footer */
+
+    footer {
+        margin-top: 50px;
+        padding-top: 50px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        font-size: 0.89rem;
+    }
+
+    .footercopyright {
+        font-size: 0.9rem;
+    }
+
+    .footerlinks {
+        height: 480px;
+        padding: 20px 80px;
+    }
+
+    .footerlinks .contactul {
+        margin-left: 90px;
+    }
+
+    .footerlinks img {
+        width: 150px;
+    }
+
+    .footerlinks ul h3 {
+        font-size: 1.2rem;
+    }
+
+    .footerlinks ul li {
+        list-style: none;
+        margin: 15px 0;
+        margin-left: 10px;
+    }
+
+    .footersvg {
+        padding: 20px 40px;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
+
+    .footersvg div {
+        scale: 0.9;
+    }
+
+    /* #endregion footer */
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    /* #region Navigation */
+    nav ul {
+        gap: 13px;
+    }
+
+    nav ul li a {
+        font-size: 0.88rem;
+    }
+
+    nav button {
+        font-size: 13px;
+        padding: 9px 20px;
+    }
+
+    .headerlogo {
+        height: 28px;
+    }
+
+    /* #endregion Navigation */
+
+    /* #region Herosection */
+    .mainbannerheader {
+        line-height: 40px;
+    }
+
+    .mainbannerheader h1 {
+        text-align: center;
+        font-size: 5.8rem;
+    }
+
+    .mainbannerheader h2 {
+        text-align: center;
+        font-size: 3.8rem;
+    }
+
+    .logotext {
+        max-width: 240px;
+        height: auto;
+    }
+
+    .btn_contactus {
+        margin-top: 10px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .btn_portfolio {
+        margin-top: 10px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* #endregion Herosection */
+
+    /* #region Introsection */
+    .introsection {
+        margin-left: 6vw;
+        margin-right: 7vw;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .introimg {
+        width: 340px;
+    }
+
+    .introsection div div h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .introsection div div p {
+        font-size: 0.9em;
+        line-height: 20px;
+        margin-bottom: 60px;
+    }
+
+    .introdetails div h3 {
+        color: #2E53A5;
+        font-size: 1.3rem;
+    }
+
+    .introdetails div h4 {
+        margin-top: 9px;
+        font-size: 0.75rem;
+    }
+
+    .rating svg {
+        width: 18px;
+    }
+
+    .introsection button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* #endregion Introsection */
+
+    /* #region footer */
+
+    footer {
+        margin-top: 50px;
+        padding-top: 50px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        font-size: 0.85rem;
+    }
+
+    .footercopyright {
+        font-size: 0.9rem;
+    }
+
+    .footerlinks {
+        height: 420px;
+        padding: 20px 80px;
+    }
+
+    .footerlinks .contactul {
+        margin-left: 90px;
+    }
+
+    .footerlinks img {
+        width: 140px;
+    }
+
+    .footerlinks ul h3 {
+        font-size: 1.2rem;
+    }
+
+    .footerlinks ul li {
+        list-style: none;
+        margin: 20px 0;
+        margin-left: 10px;
+    }
+
+    .footersvg {
+        padding: 20px 40px;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
+
+    .footersvg div {
+        scale: 0.9;
+    }
+
+    /* #endregion footer */
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    /* #region Introsection */
+
+    .introimg {
+        width: 300px;
+    }
+
+    /* #endregion Introsection */
+
+    /* #region footer */
+    .footerlinks .contactul {
+        margin-left: 40px;
+    }
+
+    .footerlinks {
+        height: 420px;
+        padding: 20px 60px;
+    }
+
+    /* #endregion footer */
+}
+
+@media only screen and (max-width: 650px) {
+
+    /* #region Navigation */
+    nav {
+        width: 100%;
+        display: none;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0 0 20px 20px;
+        padding: 15px 0 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        z-index: 5;
+    }
+
+    .mobilenav {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0 0 20px 20px;
+        padding: 15px 30px 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 6;
+    }
+
+    /* #endregion Navigation */
+
+    /* #region HeroSection */
+
+    .mainbannerheader h1 {
+        line-height: 25px;
+        font-size: 5rem;
+    }
+
+    .mainbannerheader h2 {
+        font-size: 3.5rem;
+    }
+
+    .logotext {
+        max-width: 220px;
+        height: auto;
+    }
+
+    .btn_contactus {
+        border-radius: 25px;
+        padding: 11px 20px;
+        font-size: 12px;
+
+    }
+
+    .btn_portfolio {
+        border-radius: 25px;
+        padding: 11px 20px;
+        font-size: 12px;
+    }
+
+    /* #endregion HeroSection */
+
+    /* #region Introsection */
+    .introsection {
+        position: relative;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .introimg {
+        align-self: center;
+        width: 350px;
+    }
+
+    .introdetails {
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* #endregion Introsection */
+
+    /* #region footer */
+    .footerlinks .contactul {
+        margin-left: 40px;
+    }
+
+    .footerlinks {
+        height: 370px;
+        padding: 20px 50px;
+    }
+
+    .footerlinks ul h3 {
+        font-size: 1rem;
+    }
+
+    .footerlinks ul li a {
+        font-size: 0.8rem;
+    }
+
+    .footerlinks ul li {
+        margin: 15px 0;
+        margin-left: 10px;
+    }
+
+    .footercopyright {
+        font-size: 0.8rem;
+    }
+
+    .footerlinks img {
+        width: 100px;
+    }
+
+    .footersvg {
+        padding: 10px 30px;
+    }
+
+    /* #endregion footer */
+}
+
+@media only screen and (max-width: 530px) {
+
+    /* #region Navigation */
+    nav {
+        width: 100%;
+        display: none;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0 0 20px 20px;
+        padding: 15px 0 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        z-index: 5;
+    }
+
+    .mobilenav {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0 0 20px 20px;
+        padding: 15px 30px 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 6;
+    }
+
+    /* #endregion Navigation */
+
+    /* #region HeroSection */
+    .herosection {
+        display: none;
+    }
+
+    .mainbannerheader h1 {
+        line-height: 20px;
+        font-size: 4rem;
+    }
+
+    .mainbannerheader h2 {
+        font-size: 3rem;
+    }
+
+    .logotext {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .btn_contactus {
+        border-radius: 25px;
+        padding: 11px 20px;
+        font-size: 12px;
+
+    }
+
+    .btn_portfolio {
+        border-radius: 25px;
+        padding: 11px 20px;
+        font-size: 12px;
+    }
+
+    /* #endregion HeroSection */
+
+    /* #region Introsection */
+    .introsection {
+        position: relative;
+        padding-top: 130px;
+        padding-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .introimg {
+        align-self: center;
+        width: 350px;
+    }
+
+    .introdetails {
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* #endregion Introsection */
+
+    /* #region footer */
+    footer {
+        padding-top: 30px;
+    }
+
+    .footerlinks .contactul {
+        margin-left: 0px;
+    }
+
+    .footerlinks {
+        justify-content: start;
+        flex-direction: column;
+        height: 650px;
+        padding: 20px 50px;
+        gap: 20px
+    }
+
+    .footerlinks ul h3 {
+        font-size: 1.5rem;
+    }
+
+    .footerlinks ul h4 {
+        font-size: 1rem;
+    }
+
+    .footerlinks ul li a {
+        font-size: 1rem;
+    }
+
+    .footerlinks ul li {
+        margin: 15px 0;
+        margin-left: 10px;
+    }
+
+    .footercopyright {
+        font-size: 0.8rem;
+    }
+
+    .footerlinks div {
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .footerlinks img {
+        margin-top: 20px;
+        width: 100px;
+    }
+
+    .footersvg {
+        padding: 10px 30px;
+    }
+
+    /* #endregion footer */
+}
+
+@media only screen and (max-width: 400px) {
+    :root {
+        min-width: 500px;
+    }
+}
+
+/* #endregion @media */

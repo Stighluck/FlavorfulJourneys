@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Bethany Bible Baptist Academy</title>
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/admindashboard.css">
+
+
+
+
+</head>
+
+<body>
+    <div class="herobanner"></div>
+    <div class="darkoverlay"></div>
+    <nav>
+        <div class="nav-container">
+            <div>
+                <div class="nav-left">
+                    <img src="../assets/logo.png" class="headerlogo" alt="Logo">
+                </div>
+                <ul class="nav-right">
+                    <li><a class="active">Dashboard</a></li>
+                    <li><a href="admin-users.html">User Management</a></li>
+                    <li><a href="admin-transactions.html">Transactions</a></li>
+                    <li><a href="admin-shop.html">Shop Items</a></li>
+                    <!-- <li><a href="admin-analytics.html">Analytics</a></li> -->
+
+                </ul>
+            </div>
+
+            <button class="login-btn" id="logout">Logout</button>
+        </div>
+    </nav>
+    <!-- #endregion loginform -->
+    <section>
+        <div class="scroll-container">
+            <section class="dashboard-container">
+                <h1 id="welcomeHeader">Welcome Back, Admin</h1>
+                <div class="dashboard-items">
+                    <div class="card-border orange">
+                        <div>
+                            <h2>Total Players</h2>
+                            <p>
+                                <span class="card-text" id="totalplayers">Loading...</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-border purple">
+                        <div>
+                            <h2>Total Income</h2>
+                            <p>
+                                <span class="card-text" id="totalincome">Loading...</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="logoutModal" class="modal hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to logout?</p>
+                <div class="modal-buttons">
+                    <button id="confirmLogout" class="modal-btn confirm">Yes</button>
+                    <button id="cancelLogout" class="modal-btn cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="js/admindashboard.js"></script>
+</body>
+
+</html>

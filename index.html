@@ -15,7 +15,7 @@
 <body>
     <header id="hero">
         <img src="assets/logotext.png" class="hero-logotext" alt="">
-        <img src="assets/Hero.png" class="hero-bg" alt="Game Scene">
+        <img src="assets/Hero.png" id="top" class="hero-bg" alt="Game Scene">
         <button class="play-btn">PLAY NOW</button>
         <nav>
             <div class="nav-container">
@@ -25,11 +25,11 @@
                 <ul class="nav-right">
                     <li><a class="active">Home</a></li>
                     <li><a href="#media">Media</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="support.html">FAQs</a></li>
                     <li><a href="#about">About</a></li>
 
                 </ul>
-                <button class="login-btn">Login</button>
+                <button class="login-btn" onclick="window.open('user/login.html','_self')">Login</button>
             </div>
 
         </nav>
@@ -40,11 +40,14 @@
             <h2>DON'T LET THE FOOD BURN</h2>
             <h2>WORK TOGETHER OR SERVE DISASTER!</h2>
             <h2>ONLY THE FASTEST WINS</h2>
+            <!-- <h2>UNLEASH THE FLAVOR</h2> -->
+
 
             <!-- Duplicate for seamless loop -->
             <h2>DON'T LET THE FOOD BURN</h2>
             <h2>WORK TOGETHER OR SERVE DISASTER!</h2>
             <h2>ONLY THE FASTEST WINS</h2>
+            <!-- <h2>UNLEASH THE FLAVOR</h2> -->
         </div>
     </section>
     <section class="intro-section">
@@ -69,7 +72,7 @@
                 <p>No chef cooks alone—team up and beat the heat!</p>
             </div>
             <div class="feature-image">
-                <img src="assets/render.png" alt="Co-op Gameplay">
+                <img src="assets/MO1.webp" alt="Co-op Gameplay">
             </div>
         </div>
 
@@ -79,7 +82,7 @@
                 <p>Raid goblin huts, harvest crops, slay pigs—ingredients won't find themselves!</p>
             </div>
             <div class="feature-image">
-                <img src="assets/render.png" alt="Gathering Ingredients">
+                <img src="assets/MO2.gif" alt="Gathering Ingredients">
             </div>
         </div>
 
@@ -89,7 +92,7 @@
                 <p>Toss it in the pan, don't let it burn—timing is everything!</p>
             </div>
             <div class="feature-image">
-                <img src="assets/render.png" alt="Co-op Gameplay">
+                <img src="assets/MO3.webp" alt="Co-op Gameplay">
             </div>
         </div>
 
@@ -99,20 +102,20 @@
                 <p>From grandma aprons to cyber chefs—cook in style!</p>
             </div>
             <div class="feature-image">
-                <img src="assets/render.png" alt="Co-op Gameplay">
+                <img src="assets/MO4.gif" alt="Co-op Gameplay">
             </div>
         </div>
     </section>
-    <img class="border" src="assets/Orange.png" alt="">
+    <img class="border" src="assets/Bread.png" alt="">
     <section class="support-section">
         <h2>SUPPORT</h2>
         <p>
             Need Help? We're here to make your cooking adventure smooth and fun! If you’ve got questions, we’ve got
             answers. From game mechanics to troubleshooting, everything you need is just a click away.
         </p>
-        <button class="play-btn2">Help? Click Me!</button>
+        <button class="play-btn2" onclick="window.open('support.html','_self')">Help? Click Me!</button>
     </section>
-    
+
 
     <section class="cta-wrapper">
         <img class="border" src="assets/Footer2.png" alt="">
@@ -144,7 +147,7 @@
                     <li>
                         <h3>Navigation</h3>
                     </li>
-                    <li><a href="" class="active">Home</a></li>
+                    <li><a href="#top" class="active">Home</a></li>
                     <li><a href="#media">Media</a></li>
                     <li><a href="#faqs">FAQs</a></li>
                     <li><a href="#about">About Us</a></li>
