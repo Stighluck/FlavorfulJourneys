@@ -1,7 +1,9 @@
 import { auth, database } from '../../firebase/firebase-init.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
 import { ref, get } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
 
+const db = getDatabase();
 onAuthStateChanged(auth, (user) => {
     if (user) {
         const uid = user.uid;
