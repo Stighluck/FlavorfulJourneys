@@ -98,18 +98,19 @@ async function fetchUsers() {
 function renderUsers(users) {
     userTableBody.innerHTML = '';
 
-    const filteredUsers = users.filter(user => {
-        // Normalize to boolean
-        const isDisabled = user.disabled === true || user.disabled === "true";
-        console.log(isDisabled);
+    const filteredUsers = users
+        .filter(user => user.email && user.username) // Only include users with required data
+        .filter(user => {
+            const isDisabled = user.disabled === true || user.disabled === "true";
 
-        if (currentFilter === 'enabled') return !isDisabled;
-        if (currentFilter === 'disabled') return isDisabled;
-        return true; // 'all'
-    });
+            if (currentFilter === 'enabled') return !isDisabled;
+            if (currentFilter === 'disabled') return isDisabled;
+            return true;
+        });
 
     if (filteredUsers.length === 0) {
         userTableBody.innerHTML = `<tr><td colspan="4" style="text-align:center;">No users found</td></tr>`;
+        return;
     }
 
     filteredUsers.forEach(user => {
@@ -117,9 +118,9 @@ function renderUsers(users) {
 
         const tr = document.createElement('tr');
         tr.innerHTML = `    
-            <td>${user.username || 'N/A'}</td>
-            <td>${user.email || 'N/A'}</td>
-            <td>${user.userId || 'N/A'}</td>
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td>${user.userId || user.id}</td>
             <td>
                 <button class="reset-password-btn" data-id="${user.id}">Reset Password</button>
                 <button class="${isDisabled ? 'reactivate-user-btn' : 'deactivate-user-btn'}" data-id="${user.id}">
@@ -130,6 +131,7 @@ function renderUsers(users) {
         userTableBody.appendChild(tr);
     });
 }
+
 
 // Add user button event
 const addUserModal = document.getElementById('addUserModal');
