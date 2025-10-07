@@ -321,3 +321,16 @@ thead {
     background-color: #f4f4f4;
     font-weight: bold;
 }
+
+table#transactionTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table#transactionTable tbody tr:nth-child(odd) {
+    background-color: #e8f7e9;
+}
+
+table#transactionTable thead {
+    background-color: var(--color-primary);
+    color: var(--color-font);
+}

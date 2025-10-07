@@ -41,9 +41,11 @@
                     <thead>
                         <tr>
                             <th>Date</th>
+                            <th>Item</th>
                             <th>Currency</th>
                             <th>Price</th>
                             <th>TransactionId</th>
+                            <th>View</th>
                         </tr>
                     </thead>
                     <tbody id="transactionBody">
@@ -59,6 +61,12 @@
                     <button id="confirmLogout" class="modal-btn confirm">Yes</button>
                     <button id="cancelLogout" class="modal-btn cancel">Cancel</button>
                 </div>
+            </div>
+        </div>
+        <div id="imageModal" class="modal hidden">
+            <div class="modal-content image-modal-content">
+                <span id="closeImageModal" class="close-btn">&times;</span>
+                <img id="previewImage" src="" alt="Item Preview">
             </div>
         </div>
     </section>

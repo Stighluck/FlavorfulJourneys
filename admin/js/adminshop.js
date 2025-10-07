@@ -1,4 +1,5 @@
 import { ref, get, set, child } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js";
 import { database } from '../../firebase/firebase-init.js';
 
 const filterBtn = document.querySelector('.filter-btn');
@@ -7,6 +8,8 @@ const filterSelected = document.querySelector('.filter-selected');
 const filterItems = document.querySelectorAll('.filter-options li');
 let currentFilter = 'all';
 let currentSkinKey = null;
+
+const storage = getStorage();
 
 const skinTableBody = document.querySelector('#skinTable tbody');
 const skinDetailModal = document.getElementById("skinDetailModal");
@@ -215,3 +218,55 @@ function convertToReadableDate(dateString) {
     const date = isNaN(maybeTimestamp) ? new Date(dateString) : new Date(maybeTimestamp);
     return date.toLocaleString();
 }
+
+// Add item modal controls
+const addItemBtn = document.getElementById("addItemBtn");
+const addItemModal = document.getElementById("addItemModal");
+const closeAddItemModalBtn = document.getElementById("closeAddItemModalBtn");
+const saveNewItemBtn = document.getElementById("saveNewItemBtn");
+
+addItemBtn.addEventListener("click", () => {
+    addItemModal.classList.remove("hidden");
+});
+
+closeAddItemModalBtn.addEventListener("click", () => {
+    addItemModal.classList.add("hidden");
+});
+
+// Save new item
+saveNewItemBtn.addEventListener("click", async () => {
+    const name = document.getElementById("newSkinName").value.trim();
+    const price = document.getElementById("newSkinPrice").value.trim();
+    const tier = document.getElementById("newSkinTier").value.trim();
+    const currency = document.getElementById("newSkinCurrency").value.trim();
+    const imageFile = document.getElementById("newSkinImage").files[0];
+
+    if (!name || !price || !tier || !currency || !imageFile) {
+        alert("Please fill out all fields and select an image.");
+        return;
+    }
+
+    try {
+        // ✅ Upload image to Firebase Storage
+        const imageRef = storageRef(storage, `skins/${imageFile.name}`);
+        await uploadBytes(imageRef, imageFile);
+        const downloadURL = await getDownloadURL(imageRef);
+
+        // ✅ Save item details to Firebase Realtime Database
+        const dbRef = ref(database, 'skins/' + name.toLowerCase().replace(/\s+/g, '_'));
+        await set(dbRef, {
+            name: name,
+            price: parseInt(price),
+            tier: tier,
+            currency: currency,
+            imageUrl: downloadURL,
+        });
+
+        alert("Item added successfully!");
+        addItemModal.classList.add("hidden");
+        fetchSkins(); // refresh table
+    } catch (error) {
+        console.error("Error adding item:", error);
+        alert("Failed to add item. Check console for details.");
+    }
+});

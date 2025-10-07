@@ -1,4 +1,4 @@
-import { auth,database } from '../../firebase/firebase-init.js';
+import { auth, database } from '../../firebase/firebase-init.js';
 import {
     reauthenticateWithCredential,
     EmailAuthProvider,

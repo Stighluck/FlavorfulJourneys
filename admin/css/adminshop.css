@@ -554,3 +554,30 @@ table#skinTable tbody tr:nth-child(odd) {
 .modal-content p strong {
     font-weight: bold;
 }
+
+.add-item-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.user-actions-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+
+.add-btn {
+    background: var(--color-accent, #ff6060);
+    color: #fff;
+    border: none;
+    padding: 14px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #db5c5c;
+}

@@ -429,3 +429,7 @@ nav ul a:hover {
 .hidden {
     display: none;
 }
+
+.current-email {
+    font-size: 50px;
+}

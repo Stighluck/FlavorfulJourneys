@@ -37,15 +37,67 @@
                 <div class="user-actions">
                     <h1>Transaction Viewer</h1>
                     <div class="user-actions-buttons">
+                        <div class="add-item-container">
+                            <button id="addItemBtn" class="add-btn">+ Add New Item</button>
+                        </div>
                         <div class="filter-container">
                             <button class="filter-btn">
                                 Filter by: <span class="filter-selected">All</span> <span class="filter-caret">▼</span>
                             </button>
+
                             <ul class="filter-options" style="display: none;">
                                 <li data-filter="all">All</li>
                                 <li data-filter="highest">Highest</li>
                                 <li data-filter="lowest">Lowest</li>
                             </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Add Item Modal -->
+                <div id="addItemModal" class="modal hidden">
+                    <div class="modal-content">
+                        <h2>Add New Skin</h2>
+                        <div class="modal-skin-wrapper">
+                            <div class="modal-skin-right">
+                                <div class="modal-input-group">
+                                    <label for="newSkinName"><strong>Name:</strong></label>
+                                    <input type="text" id="newSkinName" class="modal-input" />
+                                </div>
+                                <div class="modal-input-group">
+                                    <label for="newSkinPrice"><strong>Price:</strong></label>
+                                    <input type="number" id="newSkinPrice" class="modal-input" />
+                                </div>
+                                <div class="modal-input-group">
+                                    <label for="newSkinTier"><strong>Tier:</strong></label>
+                                    <select id="newSkinTier" class="modal-input">
+                                        <option value="common">Common</option>
+                                        <option value="uncommon">Uncommon</option>
+                                        <option value="rare">Rare</option>
+                                        <option value="epic">Epic</option>
+                                        <option value="legendary">Legendary</option>
+                                    </select>
+                                </div>
+                                <div class="modal-input-group">
+                                    <label for="newSkinCurrency"><strong>Currency:</strong></label>
+                                    <select id="newSkinCurrency" class="modal-input">
+                                        <option value="gems">Gems</option>
+                                        <option value="coins">Coins</option>
+                                    </select>
+                                </div>
+                                <div class="modal-input-group">
+                                    <label for="newSkinImage"><strong>Upload Image:</strong></label>
+                                    <input type="file" id="newSkinImage" accept="image/*" />
+                                </div>
+
+                                <div class="modal-buttons">
+                                    <button id="saveNewItemBtn" class="modal-btn save">Add Item</button>
+                                    <button id="closeAddItemModalBtn" class="modal-btn cancel">Cancel</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,11 +145,20 @@
                             </div>
                             <div class="modal-input-group">
                                 <label for="editSkinTier"><strong>Tier:</strong></label>
-                                <input type="text" id="editSkinTier" class="modal-input" />
+                                <select id="editSkinTier" class="modal-input">
+                                    <option value="common">Common</option>
+                                    <option value="uncommon">Uncommon</option>
+                                    <option value="rare">Rare</option>
+                                    <option value="epic">Epic</option>
+                                    <option value="legendary">Legendary</option>
+                                </select>
                             </div>
                             <div class="modal-input-group">
                                 <label for="editSkinCurrency"><strong>Currency:</strong></label>
-                                <input type="text" id="editSkinCurrency" class="modal-input" />
+                                <select id="editSkinCurrency" class="modal-input">
+                                    <option value="gems">Gems</option>
+                                    <option value="coins">Coins</option>
+                                </select>
                             </div>
                         </div>
 
