@@ -1,8 +1,7 @@
 import { ref, get, set, child } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js";
-import { app, database } from "../../firebase/firebase-init.js"; // make sure firebase-init exports 'app'
+import { app, database } from "../../firebase/firebase-init.js";
 
-// ✅ Explicitly connect to your actual Firebase Storage bucket
 const storage = getStorage(app, "gs://flavorfuljourneys-6e7b1.firebasestorage.app");
 
 const filterBtn = document.querySelector('.filter-btn');
@@ -20,24 +19,21 @@ filterBtn.addEventListener('click', () => {
     filterOptions.style.display = filterOptions.style.display === 'block' ? 'none' : 'block';
 });
 
-// Handle filter item selection
 filterItems.forEach(item => {
     item.addEventListener('click', () => {
         const selectedValue = item.textContent;
-        currentFilter = item.dataset.filter; // Save selected filter
+        currentFilter = item.dataset.filter;
         filterSelected.textContent = selectedValue;
         filterOptions.style.display = 'none';
 
-        fetchSkins(); // re-fetch and filter skins on selection
+        fetchSkins();
     });
 });
 
-// Close the skin details modal
 closeModalBtn.addEventListener('click', () => {
     skinDetailModal.classList.add("hidden");
 });
 
-// Fetch skins data
 async function fetchSkins() {
     const dbRef = ref(database);
 
@@ -62,7 +58,6 @@ async function fetchSkins() {
             });
         }
 
-        // Apply filters
         if (currentFilter === 'highest') {
             allSkins.sort((a, b) => b.price - a.price);
         } else if (currentFilter === 'lowest') {
@@ -76,7 +71,6 @@ async function fetchSkins() {
     }
 }
 
-// Render skins to table
 function renderSkins(skins) {
     skinTableBody.innerHTML = '';
 
@@ -97,7 +91,6 @@ function renderSkins(skins) {
         skinTableBody.appendChild(tr);
     });
 
-    // Add event listeners to view details buttons
     const viewDetailButtons = document.querySelectorAll('.view-details-btn');
     viewDetailButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -115,11 +108,9 @@ document.getElementById("saveChangesBtn").addEventListener('click', () => {
     }
 });
 
-// Show skin details in modal
 function showSkinDetails(skinName) {
     const dbRef = ref(database);
 
-    // Normalize the skin name by removing spaces or underscores and converting to lowercase
     const normalizedSkinName = skinName.replace(/_/g, ' ').toLowerCase();
 
     get(child(dbRef, 'skins'))
@@ -131,14 +122,13 @@ function showSkinDetails(skinName) {
 
             const skinsData = snapshot.val();
             for (const skinKey in skinsData) {
-                // Normalize the key from Firebase (skin names stored as keys)
+
                 const normalizedKey = skinKey.replace(/_/g, ' ').toLowerCase();
 
                 if (normalizedKey === normalizedSkinName) {
                     const skin = skinsData[skinKey];
-                    currentSkinKey = skinKey; // store the key for saving
+                    currentSkinKey = skinKey;
 
-                    // Populate the modal...
                     document.getElementById("skinName").textContent = skin.name;
                     document.getElementById("editSkinPrice").value = skin.price;
                     document.getElementById("editSkinTier").value = skin.tier;
@@ -158,13 +148,12 @@ function showSkinDetails(skinName) {
 function saveSkinChanges(skinKey) {
     const dbRef = ref(database);
 
-    // Get the updated values from the input fields
     const updatedPrice = document.getElementById("editSkinPrice").value;
     const updatedTier = document.getElementById("editSkinTier").value;
     const updatedCurrency = document.getElementById("editSkinCurrency").value;
     const updatedImageUrl = document.getElementById("editSkinImageUrl").value;
     const skinName = document.getElementById("skinName").textContent;
-    // Update the skin data in Firebase
+
     const updatedSkin = {
         name: skinName,
         price: updatedPrice,
@@ -173,26 +162,23 @@ function saveSkinChanges(skinKey) {
         imageUrl: updatedImageUrl,
     };
 
-    // Write the updated data to Firebase
     set(child(dbRef, `skins/${skinKey}`), updatedSkin)
         .then(() => {
             console.log("Skin details updated successfully!");
-            skinDetailModal.classList.add("hidden");  // Close the modal after saving changes
-            fetchSkins();  // Re-fetch skins to reflect the updates
+            skinDetailModal.classList.add("hidden");
+            fetchSkins();
         })
         .catch((error) => {
             console.error("Error updating skin details:", error);
         });
 }
 
-// Fetch skins when the page loads
 fetchSkins();
 const logoutBtn = document.getElementById("logout");
 const modal = document.getElementById("logoutModal");
 const confirmLogout = document.getElementById("confirmLogout");
 const cancelLogout = document.getElementById("cancelLogout");
 
-// Logout event listeners
 logoutBtn.addEventListener("click", () => {
     modal.classList.remove("hidden");
 });
@@ -211,16 +197,12 @@ confirmLogout.addEventListener("click", () => {
         });
 });
 
-// Render users table
-
-// Close the reset password modal
 function convertToReadableDate(dateString) {
     const maybeTimestamp = Number(dateString);
     const date = isNaN(maybeTimestamp) ? new Date(dateString) : new Date(maybeTimestamp);
     return date.toLocaleString();
 }
 
-// Add item modal controls
 const addItemBtn = document.getElementById("addItemBtn");
 const addItemModal = document.getElementById("addItemModal");
 const closeAddItemModalBtn = document.getElementById("closeAddItemModalBtn");
@@ -234,7 +216,6 @@ closeAddItemModalBtn.addEventListener("click", () => {
     addItemModal.classList.add("hidden");
 });
 
-// Save new item
 saveNewItemBtn.addEventListener("click", async () => {
     const name = document.getElementById("newSkinName").value.trim();
     const price = document.getElementById("newSkinPrice").value.trim();
@@ -248,12 +229,10 @@ saveNewItemBtn.addEventListener("click", async () => {
     }
 
     try {
-        // ✅ Upload image to Firebase Storage
         const imageRef = storageRef(storage, `skins/${imageFile.name}`);
         await uploadBytes(imageRef, imageFile);
         const downloadURL = await getDownloadURL(imageRef);
 
-        // ✅ Save item details to Firebase Realtime Database
         const dbRef = ref(database, 'skins/' + name.toLowerCase().replace(/\s+/g, '_'));
         await set(dbRef, {
             name: name,
@@ -265,7 +244,7 @@ saveNewItemBtn.addEventListener("click", async () => {
 
         alert("Item added successfully!");
         addItemModal.classList.add("hidden");
-        fetchSkins(); // refresh table
+        fetchSkins();
     } catch (error) {
         console.error("Error adding item:", error);
         alert("Failed to add item. Check console for details.");
