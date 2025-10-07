@@ -14,10 +14,9 @@ const firebaseConfig = {
     measurementId: "G-RQX2XSLNZJ"
 };
 
-// ✅ Only initialize ONCE
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-export { auth, database };
+export { app, auth, database };

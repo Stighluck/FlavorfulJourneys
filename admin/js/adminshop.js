@@ -2,7 +2,7 @@ import { ref, get, set, child } from "https://www.gstatic.com/firebasejs/11.0.0/
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js";
 import { app, database } from "../../firebase/firebase-init.js";
 
-const storage = getStorage(app, "gs://flavorfuljourneys-6e7b1.firebasestorage.app");
+const storage = getStorage(app);
 
 const filterBtn = document.querySelector('.filter-btn');
 const filterOptions = document.querySelector('.filter-options');
