@@ -1,6 +1,9 @@
 import { ref, get, set, child } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js";
-import { database } from '../../firebase/firebase-init.js';
+import { app, database } from "../../firebase/firebase-init.js"; // make sure firebase-init exports 'app'
+
+// ✅ Explicitly connect to your actual Firebase Storage bucket
+const storage = getStorage(app, "gs://flavorfuljourneys-6e7b1.firebasestorage.app");
 
 const filterBtn = document.querySelector('.filter-btn');
 const filterOptions = document.querySelector('.filter-options');
@@ -8,8 +11,6 @@ const filterSelected = document.querySelector('.filter-selected');
 const filterItems = document.querySelectorAll('.filter-options li');
 let currentFilter = 'all';
 let currentSkinKey = null;
-
-const storage = getStorage();
 
 const skinTableBody = document.querySelector('#skinTable tbody');
 const skinDetailModal = document.getElementById("skinDetailModal");
