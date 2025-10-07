@@ -397,9 +397,11 @@ nav ul a:hover {
     text-align: left;
     border-bottom: 1px solid #ccc;
 }
+
 table#userTable tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
 table#userTable tbody tr:nth-child(odd) {
     background-color: #e8f7e9;
 }
@@ -443,12 +445,14 @@ table#userTable tbody tr:nth-child(odd) {
 .deactivate-user-btn:hover {
     background-color: #a02531;
 }
-.reactivate-user-btn{
+
+.reactivate-user-btn {
     background-color: #28a745;
     color: var(--color-white);
     transition: all 0.3s ease;
 }
-.reactivate-user-btn:hover{
+
+.reactivate-user-btn:hover {
     background-color: #1e7e34;
 }
 

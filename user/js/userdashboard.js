@@ -14,7 +14,7 @@ onAuthStateChanged(auth, (user) => {
                 if (snapshot.exists()) {
                     const userData = snapshot.val();
                     document.getElementById("username").textContent = userData.username + "!";
-                    document.getElementById("coins").textContent = userData.coins;
+                    // document.getElementById("coins").textContent = userData.coins;
                     document.getElementById("gems").textContent = userData.gems;
                 } else {
                     console.warn("Username not found.");

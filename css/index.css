@@ -25,6 +25,7 @@
     --color-secondary: #fa9130;
     --color-secondary-dark: #ad6421;
     --color-white: #E5E5E5;
+    --color-real-white: #ffffff;
     --color-font: #1B1B1B;
 }
 
@@ -49,7 +50,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: #1b1b1b;
     z-index: 3;
     transition: background-color 0.3s ease;
 }
@@ -86,7 +87,7 @@ body:has(header:has(.hero-bg.scrolled-past)) nav {
     max-width: 1800px;
     margin: 0 auto;
 
-    padding: 10px 25px 10px 25px;
+    padding: 0px 25px 0px 25px;
 
     /* <--- This adds space left and right */
     display: flex;
@@ -146,9 +147,9 @@ nav ul a:hover {
 }
 
 .login-btn:hover {
-    background-color: var(--color-primary);
-    color: var(--color-font);
-    border: 2px solid var(--color-primary);
+    background-color: var(--color-secondary);
+    color: var(--color-real-white);
+    border: 2px solid var(--color-secondary);
 }
 
 .active {
@@ -192,8 +193,8 @@ nav ul a:hover {
 
 .play-btn {
     position: absolute;
-    top: 70%;
-    left: 50%;
+    top: 62%;
+    left: 68.5%;
     transform: translate(-50%, -50%);
     font-family: 'PixterDisplay';
     font-weight: bold;
@@ -208,6 +209,46 @@ nav ul a:hover {
     box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
 }
 
+@media (min-width: 1440px) {
+    .play-btn {
+        position: absolute;
+        top: 61%;
+        left: 71.15%;
+        transform: translate(-50%, -50%);
+        font-family: 'PixterDisplay';
+        font-weight: bold;
+        color: var(--color-font);
+        background-color: var(--color-primary);
+        border: none;
+        border-radius: 10px;
+        padding: 5px 35px 10px 35px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .play-btn {
+        position: absolute;
+        top: 61%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        font-family: 'PixterDisplay';
+        font-weight: bold;
+        color: var(--color-font);
+        background-color: var(--color-primary);
+        border: none;
+        border-radius: 10px;
+        padding: 5px 35px 10px 35px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
 .play-btn:hover {
     background-color: var(--color-white);
     color: var(--color-font);
@@ -215,7 +256,7 @@ nav ul a:hover {
 
 
 .scrolltext {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     height: 140px;
     overflow: hidden;
     position: relative;
@@ -287,7 +328,7 @@ nav ul a:hover {
 }
 
 .play-btn2 {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: var(--color-font);
     font-family: 'PixterDisplay';
     font-weight: bold;
@@ -300,12 +341,14 @@ nav ul a:hover {
 }
 
 .play-btn2:hover {
-    background-color: #66cc66;
+    background-color: var(--color-secondary-dark);
+    color: var(--color-real-white);
+
 }
 
 
 .features-section {
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     /* same orange vibe */
     padding: 220px 20px;
     display: flex;
@@ -374,7 +417,7 @@ nav ul a:hover {
 }
 
 .support-section {
-    background-color: var(--color-secondary-dark);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -391,12 +434,12 @@ nav ul a:hover {
     letter-spacing: 1px;
     font-family: 'PixterDisplay';
     color: var(--color-primary);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .support-section p {
     padding: 0px 360px;
-    color: white;
+    color: var(--color-font);
     font-size: 23px;
     line-height: 1.5;
     margin-bottom: 30px;
@@ -520,7 +563,7 @@ footer a:hover {
 
 .copyright {
     padding: 20px;
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     font-size: 18px;
     font-weight: bold;
     text-align: right;

@@ -142,9 +142,9 @@ nav ul a:hover {
 }
 
 .login-btn:hover {
-    background-color: var(--color-primary);
-    color: var(--color-font);
-    border: 2px solid var(--color-primary);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: 2px solid var(--color-secondary);
 }
 
 .active {
@@ -259,7 +259,7 @@ nav ul a:hover {
 }
 
 .modal-btn.confirm {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: var(--color-font);
 }
 
@@ -274,9 +274,14 @@ nav ul a:hover {
 }
 
 .dashboard-container {
-    margin: 150px 100px 50px 100px;
+    margin: 100px 250px 100px 250px;
+
     height: 55vh;
-    position: relative;
+    /* position: relative; */
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     z-index: 5;
     background-color: var(--color-white);
@@ -352,15 +357,17 @@ nav ul a:hover {
 .form-section {
     display: flex;
     flex-direction: column;
+
     gap: 25px;
-    margin-bottom: 30px;
+
 }
 
 .form-column {
     display: flex;
     flex-direction: column;
+
     gap: 25px;
-    margin-bottom: 30px;
+
 
 }
 
@@ -383,7 +390,7 @@ nav ul a:hover {
     padding: 12px 20px;
     font-size: 18px;
     font-family: 'PixterDisplay';
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: var(--color-font);
     border: none;
     border-radius: 10px;
@@ -392,7 +399,7 @@ nav ul a:hover {
 }
 
 .action-button:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary-dark);
     color: var(--color-white);
 }
 
@@ -406,7 +413,7 @@ nav ul a:hover {
     padding: 10px 20px;
     font-family: 'PixterDisplay';
     font-size: 18px;
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: var(--color-font);
     border: none;
     border-radius: 10px;
@@ -415,7 +422,7 @@ nav ul a:hover {
 }
 
 .setting-toggle:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary-dark);
     color: var(--color-white);
 }
 
